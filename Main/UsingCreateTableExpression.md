@@ -15,3 +15,4 @@ SELECT Text1
     ,  Measure2
 FROM CTE 
 ORDER BY DateColumn
+```
