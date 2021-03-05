@@ -9,3 +9,15 @@ WHERE  DateVal in (
                     )
 ```
 
+Supposing you need the latest record per month , then you would need to do a group by month and year to get the single latest record per month 
+
+```
+SELECT * 
+FROM   Table1
+WHERE  DateVal in (
+                    SELECT MAX(DateVal) 
+                    FROM   Table1
+                    GROUP BY MONTH(DateVal), YEAR(DateVal) 
+                    )
+```
+
