@@ -48,4 +48,38 @@ ON S.SalesTerritory = M.SalesTerritory
 AND S.DateColumn = M.DateColumn
 ```
 
-Notice that Sales and Marketing are two smaller queries that are joined on the Date and SalesTerritory columns to generate the combined view. 
+Notice that Sales and Marketing are two smaller queries that are joined on the Date and SalesTerritory columns to generate the combined result.
+
+```
+WITH Sales as ( 
+SELECT SalesTerritory
+    ,  DateColumn
+    ,  SUM(Sold) as TotalSold
+    ,  SUM(Price) as Price 
+    ,  SUM(CASE WHEN SalesTerritory = X THEN Sold*price*0.8
+            WHEN SalesTerritory = Y THEN Sold*price*0.75
+            ELSE Sold*price
+       END) as Discount
+FROM Sales 
+GROUP BY SalesTerritory, DateColumn
+),
+Marketing as (
+SELECT SalesTerritory
+    ,  DateColumn
+    ,  SUM(Cost) as CampaignCost
+FROM Marketing
+GROUP BY SalesTerritory, CampaignCost
+)
+SELECT S.SalesTerritory
+    ,  S.DateColumn
+    ,  S.TotalSold
+    ,  S.Price
+    ,  S.Discount
+    ,  M.CampaignCost
+    ,  ((S.TotalSold*S.Price) - M.CampaignCost) as Expense
+FROM Sales S 
+LEFT JOIN Marketing M 
+ON S.SalesTerritory = M.SalesTerritory
+AND S.DateColumn = M.DateColumn
+```
+The above query demonstrates a useful pattern. You can sum on a case statement. 
