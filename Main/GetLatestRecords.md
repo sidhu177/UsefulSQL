@@ -21,3 +21,14 @@ WHERE  DateVal in (
                     )
 ```
 
+Above query can also be written as 
+
+```
+SELECT * 
+FROM   Table1
+WHERE  DateVal in (
+                    SELECT MAX(DateVal) 
+                    FROM   Table1
+                    GROUP BY Date_Format(DateVal,'%Y-%m') 
+                    )
+```
