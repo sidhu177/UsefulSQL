@@ -43,7 +43,7 @@ SELECT S.SalesTerritory
     ,  M.CampaignCost
     ,  ((S.TotalSold*S.Price) - M.CampaignCost) as Expense
 FROM Sales S 
-LEFT JOIN Marketing M 
+INNER JOIN Marketing M 
 ON S.SalesTerritory = M.SalesTerritory
 AND S.DateColumn = M.DateColumn
 ```
@@ -78,8 +78,33 @@ SELECT S.SalesTerritory
     ,  M.CampaignCost
     ,  ((S.TotalSold*S.Price) - M.CampaignCost) as Expense
 FROM Sales S 
-LEFT JOIN Marketing M 
+INNER JOIN Marketing M 
 ON S.SalesTerritory = M.SalesTerritory
 AND S.DateColumn = M.DateColumn
 ```
 The above query demonstrates a useful pattern. You can sum on a case statement. 
+
+Supposing you want to create a running Total for bunch of Salesman. You can use CTE for running Total views that contain all Salesman. Following query will get the Month to Date and will show 0 for Salesman that have no records for the date instead of not displaying the salesman.
+
+```
+WITH Salesman as ( 
+SELECT DISTINCT Salesman
+    ,  DateColumn
+FROM Sales 
+),
+Sales as (
+SELECT Salesman
+    ,  DateColumn
+    ,  Sales
+FROM Sales
+GROUP BY Salesman, CampaignCost
+)
+SELECT a.Salesman
+    ,  a.DateColumn
+    ,  b.Sales
+    ,  SUM(b.Sales) OVER(PARTITION BY a.Salesman, DATE_FORMAT(a.DateColumn,'%Y-%m') ORDER BY a.DateColumn DESC ) MTD
+FROM Salesman a 
+LEFT JOIN Sales b 
+ON S.SalesTerritory = M.SalesTerritory
+AND S.DateColumn = M.DateColumn
+```
