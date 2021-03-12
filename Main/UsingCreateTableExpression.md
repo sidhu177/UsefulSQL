@@ -108,3 +108,25 @@ LEFT JOIN Sales b
 ON S.SalesTerritory = M.SalesTerritory
 AND S.DateColumn = M.DateColumn
 ```
+
+CTEs can also be used for heirarcial data processing.
+```
+WITH monthVal as ( 
+SELECT Salesman
+    ,  Max(DateColumn) as DateColumn
+FROM Sales
+GROUP BY DATE_FORMAT(DateColumn,'%Y-%m') 
+),
+Sales as (
+SELECT Salesman
+    ,  DateColumn
+    ,  Sales
+FROM Sales a
+LEFT JOIN MonthVal b
+On a.Salesman = b.Salesman
+and a.DateColumn = b.DateColumn 
+)
+SELECT *
+FROM Sales
+```
+Notice that the first CTE MonthVal is joined with the second CTE Sales. This way a chain of CTEs can be used to build a complex View. 
