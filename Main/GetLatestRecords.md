@@ -32,3 +32,13 @@ WHERE  DateVal in (
                     GROUP BY Date_Format(DateVal,'%Y-%m') 
                     )
 ```
+
+```
+SELECT * 
+FROM   Table1
+WHERE  DateVal in (
+                    SELECT MAX(DateVal) 
+                    FROM   Table1
+                    GROUP BY CONCAT(Year(DateVal),-,Month(DateVal)) 
+                    )
+```
