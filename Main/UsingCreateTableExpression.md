@@ -1,4 +1,4 @@
-Supposing you have columns that need to be grouped and apply manipulations, use create table expression to get the base columns and apply manipulations on the exterior SELECT 
+Supposing you have columns that need to be grouped and apply manipulations, use Common table expression (CTE) to get the base columns and apply manipulations on the exterior SELECT 
 
 ```
 WITH CTE AS ( 
@@ -16,9 +16,9 @@ SELECT Text1
 FROM CTE 
 ORDER BY DateColumn
 ```
-The interesting part of Create Table Expressions is that you can combine multiple queries into a single grand query.
+The interesting part of Common Table Expressions is that you can combine multiple queries into a single grand query.
 
-What you can do with Create Table Expressions can also be done using sub queries. CTEs have two advantages , first is that you can have multiple smaller CTEs from various tables and join them to create an extended table. Second is that you can try recursive queries. Here is an example of the first type.
+What you can do with Common Table Expressions can also be done using sub queries. CTEs have two advantages , first is that you can have multiple smaller CTEs from various tables and join them to create an extended table. Second is that you can try recursive queries. Here is an example of the first type.
 
 ```
 WITH Sales as ( 
@@ -130,3 +130,5 @@ SELECT *
 FROM Sales
 ```
 Notice that the first CTE MonthVal is joined with the second CTE Sales. This way a chain of CTEs can be used to build a complex View. 
+
+Common table expressions can also be used to create Recursive queries.
