@@ -129,6 +129,6 @@ and a.DateColumn = b.DateColumn
 SELECT *
 FROM Sales
 ```
-Notice that the first CTE MonthVal is joined with the second CTE Sales. This way a chain of CTEs can be used to build a complex View. 
+Notice that the first CTE MonthVal is joined with the second CTE Sales. In this example we can see that CTEs need not be projected at the final level. Base CTEs feed derived CTEs and final SELECT is on a derived CTE
 
 Common table expressions can also be used to create Recursive queries.
