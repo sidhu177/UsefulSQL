@@ -1,0 +1,11 @@
+Supposing you want to get aggregation with respect to a dimension Parition BY can act wonders to get desired aggregation
+
+```
+SELECT Dimension1
+    ,  DateValue
+    ,  SUM(Measure) Agg
+    ,  SUM(Measure) OVER(PARTITION BY Dimension1 ORDER BY DateValue DESC) AggPerDim1
+FROM Table
+GROUP BY Dimension1, DateValue
+ORDER BY DateValue DESC
+```
