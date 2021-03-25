@@ -9,3 +9,14 @@ FROM Table
 GROUP BY Dimension1, DateValue
 ORDER BY DateValue DESC
 ```
+
+Supposing you want to know relative position of one Dimension with respect to the group, like find the standing of a Salesman in the group. You can use Rank OVER(Partition By..)
+
+```
+SELECT Dimension1
+    ,  DateValue
+    ,  Rank OVER(PARTITION BY Dimension1 ORDER BY DateValue DESC) rk
+FROM Table
+GROUP BY Dimension1, DateValue
+ORDER BY DateValue DESC
+```
