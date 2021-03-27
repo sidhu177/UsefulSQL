@@ -20,3 +20,14 @@ FROM Table
 GROUP BY Dimension1, DateValue
 ORDER BY DateValue DESC
 ```
+
+Another way to invoke the Rank function is by the Row_Number function 
+
+```
+SELECT Dimension1
+    ,  DateValue
+    ,  Row_Number() OVER(PARTITION BY Dimension1 ORDER BY DateValue DESC) rn
+FROM Table
+GROUP BY Dimension1, DateValue
+ORDER BY DateValue DESC
+```
