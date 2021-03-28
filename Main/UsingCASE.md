@@ -7,3 +7,17 @@ SELECT Dimension1
         END Zone
 FROM Table 
 ```
+
+you can also do Cascaded CASE statement 
+
+```
+SELECT Dimension1
+    ,  CASE WHEN Dimension1 = A THEN 
+                                    CASE WHEN Dimension2 = SE THEN 'South East'
+                                         WHEN Dimension2 = E THEN 'East'
+                                         ELSE 'Middle East'
+                                    END   
+            WHEN Dimension2 = E THEN 'Europe'
+        END Zone
+FROM Table 
+```
