@@ -6,3 +6,7 @@ MERGE INTO Table1 USING Table2 ON Table1.dimension1 = Table2.dimension1
 
 
 MERGE is one of the powerful SQL Keywords I've had to work with and plays important role when building Data flows using stored procedures.
+
+An example workflow is getting a csv file into a landing table and then merging with Staging table which inturn gets merged into Dimension and later Reporting table/view
+
+.csv --> Lnd --> Stg --> Dim --> Rpt  
