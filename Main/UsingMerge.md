@@ -10,3 +10,5 @@ MERGE is one of the powerful SQL Keywords I've had to work with and plays import
 An example workflow is getting a csv file into a landing table and then merging with Staging table which inturn gets merged into Dimension and later Reporting table/view
 
 .csv --> Lnd --> Stg --> Dim --> Rpt  
+
+where Landing table is a truncate and load table containing only current day's data and Staging table contains historical data.
