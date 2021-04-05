@@ -1,4 +1,4 @@
-SQL code also needs to have good formatting. Just like you have formatting rules styling guides for python, java and the likes, formatting SQL code is as important if not more. Consider the following
+SQL code also needs to have good formatting. Just like you have formatting rules styling guides for python, java and the likes, formatting SQL code is as important if not more. Consider the following paragrpah style
 
 ```
 SELECT Dim1, Dim2, CAST(Datevalue as DATE) DateVal, SUM(Measure1), SUM(Measure1) OVER(PATITION BY Dim1) Total, COUNT(DISTINCT Dim1) cnt FROM TABLE1 WHERE CAST(DateValue as DATE) >= '2021-01-01' GROUP BY Dim1 ORDER BY CAST(DateValue as DATE) DESC
@@ -19,7 +19,7 @@ GROUP BY Dim1
 ORDER BY CAST(DateValue as DATE) DESC
 ```
 
-By Virtue of calling out each column on a separate line it makes the query look uncluttered and easy to read. 
+By Virtue of calling out each column on a separate line it makes the query look uncluttered and easy to read And if there is any aggregation on a column like a SUM() or a COUNT() that would be clearly distinguishable as opposed to the paragraph style wherein it becomes confusing really quick.
 
 Calling out the JOIN types explicitly helps the reader comprehend the relationship between tables. Implicit join conditions make the WHERE condition cluttered and the join type is not clear to the reader.
 
