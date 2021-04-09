@@ -19,3 +19,17 @@ GROUP BY SalesTerritory, DateColumn
 ``` 
 
 In the above example the inner query , also called sub query is more granular with respect to the data it gets from tables. Having another SELECT allows for aggregating data at required levels.
+
+Here is an example of cascaded sub query 
+
+```
+SELECT * 
+FROM Table1 
+WHERE Dim1 in ( 
+                SELECT Dim1 FROM Table2 
+                WHERE Dim2 in ( 
+                                SELECT Dim2 FROM Table3 
+                                Where Dim4 = 'A' 
+                                )
+                )
+```
