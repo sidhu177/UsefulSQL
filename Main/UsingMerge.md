@@ -19,3 +19,5 @@ An example workflow is getting a csv file into a landing table and then merging 
 where Landing table is a truncate and load table containing only current day's data and Staging table contains historical data.
 
 Dimension tables are usually a collection of Name, Date and Qualitative fields from different sources Whereas Fact tables are quantitative fields from different sources. The idea behind making dimension and fact tables are to make it easy for reporting to get the Data for visualization. Usual star schema has one Dimension table with multiple fact tables. So one customer's information is divided into many tables when storing and re-aggregated when reporting.
+
+Merging from Landing to Staging is usually done on Hash comparison
