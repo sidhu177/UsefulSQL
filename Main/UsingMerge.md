@@ -30,7 +30,7 @@ Merging from Landing to Staging is usually done on Hash comparison
    
 	 /* Merge */
 
-with etcl as 
+with table1 as 
 (select Col1
       , Col2
       , Col3
