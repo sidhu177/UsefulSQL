@@ -94,6 +94,4 @@ lnd.Col1
      FROM #ResultCount
      WHERE Action = 'UPDATE';
 
-
-GO
 ```
