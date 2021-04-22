@@ -95,3 +95,5 @@ lnd.Col1
      WHERE Action = 'UPDATE';
 
 ```
+
+its useful to have a resultcount Temporary table that will store the insert and update counts for historical records
