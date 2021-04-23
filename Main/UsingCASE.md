@@ -21,3 +21,13 @@ SELECT Dimension1
         END Zone
 FROM Table 
 ```
+
+you can also do a SELECT in CASE statement
+
+```
+SELECT Dimension1 
+    ,  CASE WHEN Dimension1 = A THEN (SELECT Measure1 FROM Table2 WHERE Dimension1=A) 
+            ELSE Dimension1 
+        END Dim1 
+FROM Table 
+```
