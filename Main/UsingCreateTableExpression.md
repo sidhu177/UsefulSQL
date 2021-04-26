@@ -131,4 +131,30 @@ FROM Sales
 ```
 Notice that the first CTE MonthVal is joined with the second CTE Sales. In this example we can see that CTEs need not be projected at the final level. Base CTEs feed derived CTEs and final SELECT is on a derived CTE
 
+CTEs can also be used in a cascaded manner. in the below example notice the second CTE inside main CTE
+
+WITH monthVal as ( 
+    WITH CTE2 AS (
+        SELECT Salesman
+            ,  Max(DateColumn) as DateColumn
+        FROM Sales
+        GROUP BY DATE_FORMAT(DateColumn,'%Y-%m')  
+)
+SELECT * 
+FROM CTE2 
+
+),
+Sales as (
+SELECT Salesman
+    ,  DateColumn
+    ,  Sales
+FROM Sales a
+LEFT JOIN MonthVal b
+On a.Salesman = b.Salesman
+and a.DateColumn = b.DateColumn 
+)
+SELECT *
+FROM Sales
+
+
 Common table expressions can also be used to create Recursive queries.
