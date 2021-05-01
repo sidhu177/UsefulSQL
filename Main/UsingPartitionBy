@@ -21,7 +21,7 @@ GROUP BY Dimension1, DateValue
 ORDER BY DateValue DESC
 ```
 
-Another way to invoke the Rank function is by the Row_Number function 
+Another important window function is the Row_Number() 
 
 ```
 SELECT Dimension1
@@ -31,3 +31,5 @@ FROM Table
 GROUP BY Dimension1, DateValue
 ORDER BY DateValue DESC
 ```
+
+This gives a row number based on the columns that the window is partitioned by
