@@ -10,3 +10,13 @@ SELECT Col2
 FROM Table2
 ```
 Now Col1 of Table1 should be the same entity attribute as in Col2 of Table2 then that will return only those values that are in Table1 but not in Table2
+
+To get the values that exist in both tables use INTERSECT
+
+```
+SELECT Col1 
+FROM Table1 
+INTERSECT 
+SELECT Col2 
+FROM Table2
+```
