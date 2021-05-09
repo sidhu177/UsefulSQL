@@ -20,3 +20,13 @@ INTERSECT
 SELECT Col2 
 FROM Table2
 ```
+
+To get all the values in both tables use UNION
+
+```
+SELECT Col1 
+FROM Table1 
+UNION
+SELECT Col2 
+FROM Table2
+```
