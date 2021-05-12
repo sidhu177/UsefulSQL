@@ -32,4 +32,4 @@ GROUP BY Dimension1, DateValue
 ORDER BY DateValue DESC
 ```
 
-This gives a row number based on the columns that the window is partitioned by
+This gives a row number based on the columns that the window is partitioned by.
