@@ -31,3 +31,13 @@ SELECT Dimension1
         END Dim1 
 FROM Table 
 ```
+
+you can also SUM on a CASE statement 
+
+```
+SELECT Dimension1 
+    ,  SUM(CASE WHEN Dimension1 = A THEN measure1 
+            ELSE measure2 
+        END) Measure1
+FROM Table 
+```
