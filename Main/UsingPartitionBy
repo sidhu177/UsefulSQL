@@ -17,7 +17,6 @@ SELECT Dimension1
     ,  DateValue
     ,  Rank OVER(PARTITION BY Dimension1 ORDER BY DateValue DESC) rk
 FROM Table
-GROUP BY Dimension1, DateValue
 ORDER BY DateValue DESC
 ```
 
@@ -28,7 +27,6 @@ SELECT Dimension1
     ,  DateValue
     ,  Row_Number() OVER(PARTITION BY Dimension1 ORDER BY DateValue DESC) rn
 FROM Table
-GROUP BY Dimension1, DateValue
 ORDER BY DateValue DESC
 ```
 
