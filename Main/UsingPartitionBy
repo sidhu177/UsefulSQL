@@ -29,3 +29,12 @@ ORDER BY DateValue DESC
 ```
 
 This gives a row number based on the columns that the window is partitioned by.
+
+DENSE_RANK is another useful function 
+
+```
+SELECT Dimension1
+    ,  DateValue
+    ,  DENSE_Rank OVER(PARTITION BY Dimension1 ORDER BY DateValue DESC) rk
+FROM Table
+ORDER BY DateValue DESC
