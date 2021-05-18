@@ -38,3 +38,4 @@ SELECT Dimension1
     ,  DENSE_Rank OVER(PARTITION BY Dimension1 ORDER BY DateValue DESC) rk
 FROM Table
 ORDER BY DateValue DESC
+```
