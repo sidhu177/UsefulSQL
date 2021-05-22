@@ -33,3 +33,19 @@ WHERE Dim1 in (
                                 )
                 )
 ```
+
+An interesting type of SELECT statement is the following
+
+```
+SELECT 
+       (SELECT Dim1
+       FROM Table1
+       WHERE Dim2='A'
+       ) as Dim1 
+    ,  (SELECT Dim1 
+        FROM Table2
+        WHERE Dim2='B'
+       ) as Dim2 
+    ,  Dim1 
+FROM Table3    
+```
