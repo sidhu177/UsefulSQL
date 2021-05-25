@@ -9,4 +9,6 @@ SELECT * FROM source.marketing INTO public.lnd_marketing
 
 ```
 
-Above is a very simplified example of taking data from source.marketing and loading on to public.lnd_marketing. Established Data Warehouses have such type data flows from landing tables all the way to staging -> dimension -> fact -> reporting tables. Most of the data flow is orchestrated using stored procedures.
+Above is a very simplified example of taking data from source.marketing and loading on to public.lnd_marketing. Established Data Warehouses have such type data flows from landing tables all the way to staging -> dimension -> fact -> reporting tables. Most of the data flow is orchestrated using stored procedures. 
+
+Stored Procedures are popular for storing and executing `Merge` logics. 
