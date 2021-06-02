@@ -1,4 +1,4 @@
-Some SQL databases like postgres and SQL Server allow Set operations like Except and Intercept. MySQL does not. 
+Some SQL databases like postgres and SQL Server allow Set operations like Except, Union and Intercept. MySQL does not. 
 
 Using Except can make it easy to find values that exist in one table but do not exist in the other tables. 
 
