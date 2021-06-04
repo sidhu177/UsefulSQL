@@ -11,5 +11,16 @@ WHERE  Loaddate = @PrevDate
 ```
 Above is a SQL Server specific example but you get the point. Declaring variable types and storing values come in super handy when working on Stored Procedures and functions. 
 
+```
+DECLARE 
 
+PrevDate := DATE(now() - INTERVAL'3 Month')
 
+BEGIN
+SELECT *
+FROM   Table1
+WHERE  Loaddate = PrevDate;
+END
+```
+
+Above is a PostgreSQL specific example on storing a Date that is 3 months before todays date to 'PrevDate' variable to be used in the workflow
