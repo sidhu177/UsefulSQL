@@ -1,4 +1,4 @@
-Filtering in relational databases is done using Where condition. A less known fact is that WHERE is the first syntax that gets executed in SQL. Its a powerful syntax and should be used with caution.
+Filtering in relational databases is done using Where condition. A less known fact is that WHERE is the first syntax that gets executed in SQL, Its a powerful syntax and should be used with caution.
 
 ```
 SELECT *
