@@ -41,3 +41,5 @@ SELECT Dimension1
         END) Measure1
 FROM Table 
 ```
+
+Case statement can quickly become complex and should be used sparingly. 
