@@ -42,4 +42,12 @@ SELECT Dimension1
 FROM Table 
 ```
 
-Case statement can quickly become complex and should be used sparingly. 
+you can also use SELECT in CASE 
+
+```
+SELECT Dimension1 
+    ,  SUM(CASE WHEN Dimension1 = A THEN (SELECT measure1 FROM Table2 ORDER BY measure1 LIMIT 1) 
+            ELSE measure2 
+        END) Measure1
+FROM Table 
+```
