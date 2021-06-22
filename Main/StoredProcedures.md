@@ -13,3 +13,7 @@ Above is a very simplified example of taking data from source.marketing and load
 
 Stored Procedures are popular for storing and executing `Merge` logics. 
 These days you can also invoke AWS Lambda functions from Stored Procesures [link](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Lambda.html)
+
+another advantage of stored procedures are that they allow you to have Temp tables that can serve a specific purpose like grouping few columns into a Temp table, doing some aggregations on them and inserting the result into another table. Temp tables are wiped off by the Database at 12 every midnight so the space claimed by Temp tables are reclaimed 
+
+ 
