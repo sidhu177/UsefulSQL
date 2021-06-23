@@ -1,0 +1,1 @@
+If sub queries are a design pattern in SQL then correlated Queries are another important design pattern
