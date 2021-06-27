@@ -20,3 +20,5 @@ OR lcase(CITY) like '%i'
 OR lcase(CITY) like '%o'
 OR lcase(CITY) like '%u')
 ```
+
+WHERE clause is the first syntax that is executed when compiling a SQL Query.
