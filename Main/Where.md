@@ -22,3 +22,12 @@ OR lcase(CITY) like '%u')
 ```
 
 WHERE clause is the first syntax that is executed when compiling a SQL Query.
+
+```
+SELECT col1
+    ,  Col2
+FROM   Table1
+WHERE  col1 = 'A'
+```
+
+Above query first executes the WHERE clause and sets the filter to get rows where Col1 is A and then projects Col1 and Col2 
