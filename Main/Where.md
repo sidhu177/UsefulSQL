@@ -30,4 +30,13 @@ FROM   Table1
 WHERE  col1 = 'A'
 ```
 
-Above query first executes the WHERE clause and sets the filter to get rows where Col1 is A and then projects Col1 and Col2 
+Above query first executes the WHERE clause and sets the filter to get rows where Col1 is A and then projects Col1 and Col2. The sequence of filters in WHERE also matters
+
+```
+SELECT col1
+    ,  Col2
+FROM   Table1
+WHERE  partition_column = 'A'
+        AND col2 = 'B'
+```
+has the effect of getting all the 'A' in the partition_column and then filtering for 'B' Note that this is not the same as getting 'B' first and then applying partition_column
