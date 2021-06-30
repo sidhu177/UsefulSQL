@@ -45,4 +45,4 @@ GROUP BY Dim1
 ORDER BY CAST(DateValue as DATE) DESC
 ```
 
-Now I get that formatting is largely an individual preference but when working in Production environments its higly likely that a script set in production will have to be read by another Developer either for troubleshooting or development. As such having formatting standards like PEP8 in python will help in making SQL code maintenance.
+Now I get that formatting is largely an individual preference but when working in Production environments its higly likely that a script set in production will have to be read by another Developer either for troubleshooting or development. As such having formatting standards like PEP8 in python will help in SQL code maintenance.
