@@ -34,7 +34,7 @@ AND CAST(DateValue as DATE) >= '2021-01-01'
 Instead consider the following
 
 ```
-SELECT .....
+SELECT *
 FROM TABLE1 t1 
 INNER JOIN TABLE2 t2
 on t1.Dim1 = t2.Dim1 
