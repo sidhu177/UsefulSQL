@@ -24,7 +24,7 @@ By Virtue of calling out each column on a separate line it makes the query look 
 Calling out the JOIN types explicitly helps the reader comprehend the relationship between tables. Implicit join conditions make the WHERE condition cluttered and the join type is not clear to the reader.
 
 ```
-SELECT ....
+SELECT *
 FROM TABLE1 t1, TABLE2 t2, Table3 t3 
 WHERE t1.Dim1 = t2.Dim1 
 AND t1.DateValue = t3.DateValue
