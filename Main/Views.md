@@ -1,4 +1,4 @@
-Views are very useful in isolating selected columns into a table type object. The difference between a view and table is that tables are physically stored on a Database, Views are created when they are invoked in a SELECT query. 
+Views are very useful in isolating selected columns into a table type object. The difference between a view and table is that tables are physically stored on a Database, Views get built when they are invoked by a SELECT query. 
 
 ```
 CREATE View public.Marketing_view AS 
