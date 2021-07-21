@@ -49,7 +49,7 @@ with table1 as
 	  on LND.Col1 = STG.Col1
 	 
 	  WHEN MATCHED 
-AND (LND.Col2 <> STG.Col2) OR (LND.LND_HASH != STG.STG_HASH)
+AND (LND.LND_HASH != STG.STG_HASH)
 
 THEN 
 UPDATE
