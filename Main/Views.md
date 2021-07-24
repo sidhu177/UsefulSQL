@@ -19,4 +19,4 @@ With the above view defined, we dont have to write the SELECT query every time y
 SELECT * FROM public.Marketing_view
 ```
 
-Postgres has a unique type of view called Materialized View.
+Postgres has a unique type of view called Materialized View. The advantage of using Marketing_view is that it acts like an actual table and saves data so it returns quicker than a normal View.
