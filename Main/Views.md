@@ -18,3 +18,5 @@ With the above view defined, we dont have to write the SELECT query every time y
 ```
 SELECT * FROM public.Marketing_view
 ```
+
+Postgres has a unique type of view called Materialized View.
