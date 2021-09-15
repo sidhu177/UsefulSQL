@@ -34,7 +34,7 @@ WHERE Dim1 in (
                 )
 ```
 
-An interesting type of SELECT statement is the following:
+An interesting type of SELECT statement is the following:-
 
 ```
 SELECT 
