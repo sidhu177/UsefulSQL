@@ -157,4 +157,4 @@ SELECT *
 FROM Sales
 
 
-Common table expressions can be used to create Recursive queries.
+Common table expressions can be used to create Recursive queries which are useful in some scenarios
